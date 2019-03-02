@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/atsang14/gamersgrid_hackathon/issues"
   },
-  "homepage": "https://github.com/atsang14/gamersgrid_hackathon#readme"
+  "homepage": "https://github.com/atsang14/gamersgrid_hackathon#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "path": "^0.12.7"
+  }
 }
