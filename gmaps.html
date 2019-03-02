@@ -57,6 +57,17 @@ function initMap() {
     mapTypeId: 'terrain'
   });
 
+  // Check bounds
+  // var checkBound = new google.maps.geometry.spherical.computeDistanceBetween({lat: 34.052, lng: -118.243},{lat: 34.052, lng: -118.243})
+  // console.log(checkBound);
+
+  // Create markers
+  var marker = new google.maps.Marker({
+    position: {lat: 34.052, lng: -118.243},
+    map: map,
+    title: 'Hi Julio'
+  });
+
   // Construct the circle for each value in citymap.
   // Note: We scale the area of the circle based on the population.
   for (var city in citymap) {
