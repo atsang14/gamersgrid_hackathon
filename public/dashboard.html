@@ -75,7 +75,9 @@
         
     </div>
 		<div id="map"></div> -->
-    
+    <div id="data">
+
+		</div>
 		<div class="container">
 				<h2>Carousel Example</h2>  
 				<div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -121,6 +123,51 @@
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCYL09kqaJG8N_-m-QYzaPdBlA1rG0IHMg&libraries=geometry&callback=initMap" async defer
 ></script>
 <script src="./assets/script/googlemaps.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.8.5/firebase.js"></script>
+    <script>
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyAhMPAQkO5xHBrwN7LdHfzPU2AsHg8Hcts",
+        authDomain: "gamersgridhackat-1551564541695.firebaseapp.com",
+        databaseURL: "https://gamersgridhackat-1551564541695.firebaseio.com",
+        projectId: "gamersgridhackat-1551564541695",
+        storageBucket: "",
+        messagingSenderId: "666198063280"
+    };
+
+    firebase.initializeApp(config);
+
+    // Create a variable to reference the database.
+    var database = firebase.database();
+
+    // -------------------------------------------------------------- (CRITICAL - BLOCK) --------------------------- //
+    // connectionsRef references a specific location in our database.
+    // All of our connections will be stored in this directory.
+    var connectionsRef = database.ref("/connections");
+
+    var connectedRef = database.ref(".info/connected");
+
+    connectedRef.on("value", function(snap) {    
+        // If they are connected..
+        if (snap.val()) {
+            // Add user to the connections list.
+            var con = connectionsRef.push(true);
+            // Remove user from the connection list when they disconnect.
+            con.onDisconnect().remove();
+        }  
+    });
+		
+		database.ref("/hostInfo").on('value', function(snapshot) {
+		
+			var checkout = snapshot.val();
+			console.log(checkout);
+
+		});
+
+
+
+</script>
 
   </body>
 </html>
