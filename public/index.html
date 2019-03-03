@@ -40,57 +40,114 @@
     </script> -->
 
 <script>
-    console.log("hi"); 
+    // console.log("hi"); 
 
-    var pos; 
-    var citymap = {
+    // var pos; 
+    // var citymap = {
       
-      losangeles: {
-        center: {lat: 34.052, lng: -118.243},
-        population: 3857799
-      }
+    //   losangeles: {
+    //     center: {lat: 34.052, lng: -118.243},
+    //     population: 3857799
+    //   }
       
-    };
+    // };
     
-    function initMap() {
-      // Create the map.
+    // function initMap() {
+    //   // Create the map.
       
-      var map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 15,
-        center: {lat: 34.052, lng: -118.243},
-        mapTypeId: 'terrain'
-      });
+      // var map = new google.maps.Map(document.getElementById('map'), {
+      //   zoom: 15,
+      //   center: {lat: 34.052, lng: -118.243},
+      //   mapTypeId: 'terrain'
+      // });
     
-      // Check bounds
-      // var checkBound = new google.maps.geometry.spherical.computeDistanceBetween(
-      //       new google.maps.LatLng(244.052, -118.243), new google.maps.LatLng(31.052, -118.243[1000]));
+    //   // Check bounds
+    //   // var checkBound = new google.maps.geometry.spherical.computeDistanceBetween(
+    //   //       new google.maps.LatLng(244.052, -118.243), new google.maps.LatLng(31.052, -118.243[1000]));
       
-      // console.log(checkBound);
+    //   // console.log(checkBound);
     
-      // Create markers
-      var marker = new google.maps.Marker({
-        position: {lat: 34.052, lng: -118.243},
-        map: map,
-        title: 'Hi Julio'
-      });
+    //   // Create markers
+      // var marker = new google.maps.Marker({
+      //   position: {lat: 34.052, lng: -118.243},
+      //   map: map,
+      //   title: 'Hi Julio'
+      // });
      
-      // Construct the circle for each value in citymap.
-      // Note: We scale the area of the circle based on the population.
-      for (var city in citymap) {
-        // Add the circle for this city to the map.
-        var cityCircle = new google.maps.Circle({
-          strokeColor: '#FF0000',
-          strokeOpacity: 0.8,
-          strokeWeight: 2,
-          fillColor: '#FF0000',
-          fillOpacity: 0.35,
-          map: map,
-          center: citymap[city].center,
-          radius: 1000
+    //   // Construct the circle for each value in citymap.
+    //   // Note: We scale the area of the circle based on the population.
+    //   for (var city in citymap) {
+    //     // Add the circle for this city to the map.
+        // var cityCircle = new google.maps.Circle({
+        //   strokeColor: '#FF0000',
+        //   strokeOpacity: 0.8,
+        //   strokeWeight: 2,
+        //   fillColor: '#FF0000',
+        //   fillOpacity: 0.35,
+        //   map: map,
+        //   center: citymap[city].center,
+        //   radius: 1000
+        // });
+    //   }      
+    // }
+
+
+    var map, infoWindow;
+    function initMap() {
+      var pos;
+
+      infoWindow = new google.maps.InfoWindow;
+
+      // Try HTML5 geolocation.
+      if (navigator.geolocation) {
+        
+        navigator.geolocation.getCurrentPosition(function(position) {
+          pos = {
+            lat: position.coords.latitude,
+            lng: position.coords.longitude
+          };
+          var marker = new google.maps.Marker({
+            position: pos,
+            map: map,
+            title: 'Hi Julio'
+          });
+
+          var cityCircle = new google.maps.Circle({
+            strokeColor: '#FF0000',
+            strokeOpacity: 0.8,
+            strokeWeight: 2,
+            fillColor: '#FF0000',
+            fillOpacity: 0.35,
+            map: map,
+            center: pos,
+            radius: 1000
+          });
+          
+          infoWindow.setPosition(pos);
+          infoWindow.setContent("Fuckin\' Julio");
+          infoWindow.open(map);
+          map.setCenter(pos);
+        }, function() {
+          handleLocationError(true, infoWindow, map.getCenter());
         });
-      }      
+      } else {
+        // Browser doesn't support Geolocation
+        handleLocationError(false, infoWindow, map.getCenter());
+      }
+
+      map = new google.maps.Map(document.getElementById('map'), {
+        center: pos,
+        zoom: 15
+      });
     }
-    
+
+      function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+        infoWindow.setPosition(pos);
+        infoWindow.setContent(browserHasGeolocation ?
+                              'Error: The Geolocation service failed.' :
+                              'Error: Your browser doesn\'t support geolocation.');
+        infoWindow.open(map);
+      }
     // infoWindow = new google.maps.InfoWindow;
     // // Try HTML5 geolocation.
     // if (navigator.geolocation) {
