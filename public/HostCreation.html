@@ -11,13 +11,34 @@
        * element that contains the map. */
     </style>
     </head>
-    <body>      
+    <body> 
+    	<h3>Host Creation</h3>
          
-        <form>
-            <input type="text" name="firstname" placeholder="">
-            <input type="text" name="firstname" placeholder="">
-            <input type="text" name="firstname" placeholder="">
+        <form action="">
+        	Name:<br>
+            <input id = "Name" type="text" name="firstname" placeholder=""><br>
+            Description:<br>
+            <input id = "Description" type="text" name="firstname" placeholder=""><br>
+            Cap Size: <br>
+            <input id = "CapSize" type="text" name="firstname" placeholder><br>
+            Type? Competitive/Casual: <br>
+            <input id = "Type" type="text" name="firstname" placeholder=""><br>
+            Prize: <br>
+            <input id = "Prize" type="text" name="firstname" placeholder=""> 
+            	<input type="checkbox" id ="noPrize" name="noPrize"> 
+            	<label for="noPrize">Check here for no prize</label><br>
+            Entry Fee: <br>
+            <input id = "Fee" type="text" name="firstname" placeholder=""> 
+            	<input type="checkbox" id ="noFee" name="noFee"> 
+            	<label for="noFee">Check here for no fee</label> <br>
+            <input id = "SubmitButton" type="submit" value="Submit">
         </form>
+
+        <form action="upload.php" method="post" enctype="multipart/form-data">
+    	Select image to upload:
+    	<input type="file" name="fileToUpload" id="fileToUpload">
+    	<input type="submit" value="Upload Image" name="submit">
+		</form>
 
     </body>
 </html>
