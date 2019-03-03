@@ -41,7 +41,7 @@
 		</form>
 
     </body>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.8.5/firebase.js"></script>
     <script>
     // Initialize Firebase
@@ -53,6 +53,7 @@
         storageBucket: "",
         messagingSenderId: "666198063280"
     };
+
     firebase.initializeApp(config);
 
     // Create a variable to reference the database.
@@ -75,15 +76,46 @@
         }  
     });
 
-    $('#submitButton').on('click', function() {
+    $('#SubmitButton').on('click', function() {
         event.preventDefault();
+
         var name = '';
         var description = '';
-        var capSize = '';
-        var type = '';
+        var CapSize = '';
+        var Type = '';
         var prize = '';
+        var Fee = '';
         
-    
+
+        name = $('#Name').val().toLowerCase().trim();
+        description = $('#Description').val().toLowerCase().trim()
+        CapSize = $('#CapSize').val().toLowerCase().trim()
+        Type = $('#Type').val().toLowerCase().trim()
+        Prize = $('#Prize').val().toLowerCase().trim()
+        Fee = $('#Fee').val().toLowerCase().trim()
+
+        $('#Name').val() = '';
+        $('#Description').val() = '';
+        $('#CapSize').val() = '' ;
+        $('#Type').val() = '' ;
+        $('#Prize').val() = '' ;
+        $('#Fee').val() = '' ;
+
+        var hostInfo = {
+            name : name,
+            description : description,
+            CapSize : CapSize,
+            Type : Type,
+            Prize : Prize,
+            Fee : Fee,
+        }
+
+        console.log(hostInfo);
+
+        database.ref('/hostInfo').push(
+            hostInfo
+        );
+
     });
     </script>
 </html>
