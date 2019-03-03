@@ -33,6 +33,10 @@ app.get('/dashboard', (req, res) => {
 	res.sendFile(path.join(__dirname, "public/dashboard.html"));
 });
 
+app.get('/HostCreation', (req, res) => {
+	res.sendFile(path.join(__dirname, "public/HostCreation.html"));
+});
+
 // Start the server
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {

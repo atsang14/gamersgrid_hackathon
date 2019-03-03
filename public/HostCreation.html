@@ -33,6 +33,37 @@
         messagingSenderId: "666198063280"
     };
     firebase.initializeApp(config);
+
+    // Create a variable to reference the database.
+    var database = firebase.database();
+
+    // -------------------------------------------------------------- (CRITICAL - BLOCK) --------------------------- //
+    // connectionsRef references a specific location in our database.
+    // All of our connections will be stored in this directory.
+    var connectionsRef = database.ref("/connections");
+
+    var connectedRef = database.ref(".info/connected");
+
+    connectedRef.on("value", function(snap) {    
+        // If they are connected..
+        if (snap.val()) {
+            // Add user to the connections list.
+            var con = connectionsRef.push(true);
+            // Remove user from the connection list when they disconnect.
+            con.onDisconnect().remove();
+        }  
+    });
+
+    $('#submitButton').on('click', function() {
+        event.preventDefault();
+        var name = '';
+        var description = '';
+        var capSize = '';
+        var type = '';
+        var prize = '';
+        
+    
+    });
     </script>
 </html>
 
