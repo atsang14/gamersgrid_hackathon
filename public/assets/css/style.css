@@ -45,3 +45,7 @@ img {
 	overflow-y: hidden;
 	z-index: -1;
 }
+
+.pro-players {
+	overflow-y: visible;
+}
