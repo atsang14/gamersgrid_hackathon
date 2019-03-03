@@ -1,0 +1,42 @@
+html, body {
+	min-height: 100%;
+	position: relative;
+} 
+
+h3 {
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.navbar {
+	padding: 0.1em 0.5em;
+}
+
+figure {
+	border-radius: 2em;
+}
+
+.btn-success {
+	background-color: #677bda;
+}
+
+.btn-success:hover {
+	background-color: #465ed2;
+}
+
+.btn {
+	font-size: 20px;
+}
+
+.container {
+	max-width: 100%;
+}
+
+.trophy {
+	height: 500px;
+}
+
+h4 {
+	font-size: 40px;
+	font-weight: bold;
+}

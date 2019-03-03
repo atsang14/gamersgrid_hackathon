@@ -33,6 +33,15 @@ app.get('/dashboard', (req, res) => {
 	res.sendFile(path.join(__dirname, "public/dashboard.html"));
 });
 
+app.get('/user-profile', (req, res) => {
+	res.sendFile(path.join(__dirname, "public/julio.html"));
+});
+
+app.get('/pro-profile', (req, res) => {
+	res.sendFile(path.join(__dirname, "public/userProfile.html"));
+});
+
+
 // Start the server
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
