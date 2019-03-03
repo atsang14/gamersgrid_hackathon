@@ -44,7 +44,7 @@
         <div class="w-25 m-auto">
         	<h3>Host Creation</h3>
              
-            <form action="">
+            <form action="/dashboard.html" >
             	Name:<br>
                 <input id = "Name" type="text" name="firstname" placeholder=""><br>
                 Description:<br>
@@ -62,7 +62,7 @@
                 <input id = "Fee" type="text" name="firstname" placeholder=""> 
                 <input type="checkbox" id ="noFee" name="noFee"> 
                 <label for="noFee">Check here for no fee</label> <br>
-                <input id ="SubmitButton" type="submit" value="Submit">
+                <input id ="SubmitButton" onclick="location.href='/dashboard.html';" type="submit" value="Submit">
             </form>
 
             <!-- <form action="upload.php" method="post" enctype="multipart/form-data">
