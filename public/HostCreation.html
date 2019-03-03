@@ -44,7 +44,7 @@
         <div class="w-25 m-auto">
         	<h3>Host Creation</h3>
              
-            <form action="/dashboard.html">
+            <form action="">
             	Name:<br>
                 <input id = "Name" type="text" name="firstname" placeholder=""><br>
                 Description:<br>
@@ -109,7 +109,8 @@ connectedRef.on("value", function(snap) {
 });
 
 $('#SubmitButton').on('click', function() {
-    event.PreventDefault();
+    event.preventDefault();
+
     var name = '';
     var description = '';
     var CapSize = '';
@@ -139,6 +140,7 @@ $('#SubmitButton').on('click', function() {
     database.ref('/hostInfo').push(
         hostInfo
     );
+
 });
 </script>
 </body>
