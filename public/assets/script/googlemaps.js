@@ -38,7 +38,7 @@ function initMap() {
       attachSecretMessage(marker, "You are Here! :]");
       marker.setMap(map);
   
-      var messages = ["League of Legends", "Super Smash Bros"]
+      var messages = ["League of Legends<br>Prize:500<br>SFSU<br>2:00pm", "Apex League<br>Prize:0<br>StonesTown<br>6:00pm"]
 
       for(var i = 0; i < markers.length; i++) {
         var marker = new google.maps.Marker({
