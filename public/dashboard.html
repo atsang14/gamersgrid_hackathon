@@ -167,8 +167,10 @@
 				console.log(checkout[key]);
 				var name = $('<p>').append(checkout[key].name);
 				var description = $('<p>').append(checkout[key].description);
+				var Fee = $('<p>').append(checkout[key].Fee);
+				var Type = $('<p>').append(checkout[key].Type);
 				console.log(data);
-				$('#data').append(name).append(description);
+				$('#data').append(name).append(description).append(Fee).append(Type);
 			}
 			
 		});
