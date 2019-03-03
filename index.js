@@ -41,6 +41,9 @@ app.get('/pro-profile', (req, res) => {
 	res.sendFile(path.join(__dirname, "public/userProfile.html"));
 });
 
+app.get('/HostCreation', (req, res) => {
+	res.sendFile(path.join(__dirname, "public/HostCreation.html"));
+});
 
 // Start the server
 const PORT = process.env.PORT || 8080;

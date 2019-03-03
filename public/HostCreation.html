@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple Map</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+    </style>
+    </head>
+    <body> 
+    	<h3>Host Creation</h3>
+         
+        <form action="">
+        	Name:<br>
+            <input id = "Name" type="text" name="firstname" placeholder=""><br>
+            Description:<br>
+            <input id = "Description" type="text" name="firstname" placeholder=""><br>
+            Cap Size: <br>
+            <input id = "CapSize" type="text" name="firstname" placeholder><br>
+            Type? Competitive/Casual: <br>
+            <input id = "Type" type="text" name="firstname" placeholder=""><br>
+            Prize: <br>
+            <input id = "Prize" type="text" name="firstname" placeholder=""> 
+            	<input type="checkbox" id ="noPrize" name="noPrize"> 
+            	<label for="noPrize">Check here for no prize</label><br>
+            Entry Fee: <br>
+            <input id = "Fee" type="text" name="firstname" placeholder=""> 
+            	<input type="checkbox" id ="noFee" name="noFee"> 
+            	<label for="noFee">Check here for no fee</label> <br>
+            <input id = "SubmitButton" type="submit" value="Submit">
+        </form>
+
+        <form action="upload.php" method="post" enctype="multipart/form-data">
+    	Select image to upload:
+    	<input type="file" name="fileToUpload" id="fileToUpload">
+    	<input type="submit" value="Upload Image" name="submit">
+		</form>
+
+    </body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.8.5/firebase.js"></script>
+    <script>
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyAhMPAQkO5xHBrwN7LdHfzPU2AsHg8Hcts",
+        authDomain: "gamersgridhackat-1551564541695.firebaseapp.com",
+        databaseURL: "https://gamersgridhackat-1551564541695.firebaseio.com",
+        projectId: "gamersgridhackat-1551564541695",
+        storageBucket: "",
+        messagingSenderId: "666198063280"
+    };
+
+    firebase.initializeApp(config);
+
+    // Create a variable to reference the database.
+    var database = firebase.database();
+
+    // -------------------------------------------------------------- (CRITICAL - BLOCK) --------------------------- //
+    // connectionsRef references a specific location in our database.
+    // All of our connections will be stored in this directory.
+    var connectionsRef = database.ref("/connections");
+
+    var connectedRef = database.ref(".info/connected");
+
+    connectedRef.on("value", function(snap) {    
+        // If they are connected..
+        if (snap.val()) {
+            // Add user to the connections list.
+            var con = connectionsRef.push(true);
+            // Remove user from the connection list when they disconnect.
+            con.onDisconnect().remove();
+        }  
+    });
+
+    $('#SubmitButton').on('click', function() {
+        event.preventDefault();
+
+        var name = '';
+        var description = '';
+        var CapSize = '';
+        var Type = '';
+        var prize = '';
+        var Fee = '';
+        
+
+        name = $('#Name').val().toLowerCase().trim();
+        description = $('#Description').val().toLowerCase().trim()
+        CapSize = $('#CapSize').val().toLowerCase().trim()
+        Type = $('#Type').val().toLowerCase().trim()
+        Prize = $('#Prize').val().toLowerCase().trim()
+        Fee = $('#Fee').val().toLowerCase().trim()
+
+        $('#Name').val() = '';
+        $('#Description').val() = '';
+        $('#CapSize').val() = '' ;
+        $('#Type').val() = '' ;
+        $('#Prize').val() = '' ;
+        $('#Fee').val() = '' ;
+
+        var hostInfo = {
+            name : name,
+            description : description,
+            CapSize : CapSize,
+            Type : Type,
+            Prize : Prize,
+            Fee : Fee,
+        }
+
+        console.log(hostInfo);
+
+        database.ref('/hostInfo').push(
+            hostInfo
+        );
+
+    });
+    </script>
+</html>
+
+<!-- map = new google.maps.Map(document.getElementById("map"), {...}); -->
+
+
+<!-- AIzaSyB_PWADRyD7thZCHdXxOS19Z_P9Uh-HvS8 -->
