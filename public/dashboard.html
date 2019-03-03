@@ -38,7 +38,7 @@
         <a class="nav-link text-center" href="#">Settings</a>
     </nav>
 </header>
-
+<div id="data"></div>
 <div class="container">
   <h2>Carousel Example</h2>  
   <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -124,7 +124,6 @@
 				var description = $('<p>').append(checkout[key].description);
 				var Fee = $('<p>').append(checkout[key].Fee);
 				var Type = $('<p>').append(checkout[key].Type);
-				console.log(data);
 				$('#data').append(name).append(description).append(Fee).append(Type);
 			}
 			
