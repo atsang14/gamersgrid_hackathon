@@ -28,7 +28,7 @@ a:hover {
 	color: #666;
 }
 
-img {
+img.logo {
 	box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.2), 0 6px 100px 0 rgba(0, 0, 0, 0.19);
 	border-radius: 0em 0em 0.3em 0.3em;
 	width: 3.5em;
@@ -44,4 +44,12 @@ img {
 	right: 0;
 	overflow-y: hidden;
 	z-index: -1;
+}
+
+img{
+	overflow: scroll;
+	overflow-x: visible;
+	width: 10em;
+	margin: auto;
+
 }
