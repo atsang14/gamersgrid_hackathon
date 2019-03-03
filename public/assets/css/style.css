@@ -1,8 +1,8 @@
-/* html, body {
+ html, body {
 	height: 100%;
 	margin: 0;
 	padding: 0;
-} */
+} 
 
 h1 {
 	font-size: 100px;
@@ -20,15 +20,6 @@ h1 {
 	margin-bottom: 0.3em;
 }
 
-a {
-	color: #000;
-	margin: auto;
-}
-
-a:hover {
-	color: #666;
-}
-
 img.logo {
 	box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.2), 0 6px 100px 0 rgba(0, 0, 0, 0.19);
 	border-radius: 0em 0em 0.3em 0.3em;
@@ -37,6 +28,28 @@ img.logo {
 	padding: 0.2em;
 }
 
+a {
+	color: #677bda;
+	margin: auto;
+}
+
+a:hover {
+	color: #465ed2;
+	text-decoration: none;
+}
+
+nav, .navbar-nav, .nav, .navbar-default, .container-default {
+	background-color: #fff;
+	margin: auto;
+	text-align: center;
+	border: none;
+}
+
+.active {
+	background-color: #fff;
+	font-weight: bold;
+}
+/*
 .row {
 	margin: 0;
 	min-height: 70%;
@@ -52,8 +65,8 @@ img{
 	overflow-x: visible;
 	width: 10em;
 	margin: auto;
-}
+}*/
 
-.carousel-item {
-	background-color: #666;
+.container {
+	width: 100%!important;
 }

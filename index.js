@@ -45,6 +45,10 @@ app.get('/HostCreation', (req, res) => {
 	res.sendFile(path.join(__dirname, "public/HostCreation.html"));
 });
 
+app.get('/event', (req, res) => {
+	res.sendFile(path.join(__dirname, "public/event.html"));
+});
+
 // Start the server
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
