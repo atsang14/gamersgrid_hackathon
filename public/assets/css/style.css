@@ -1,0 +1,39 @@
+html, body {
+	height: 100%;
+	margin: auto;
+}
+h1 {
+	font-size: 100px;
+}
+.gglogo {
+	background-color: #fff;
+	border: solid 1px #fff;
+	margin: auto;
+}
+.jumbotron {
+	background-color: #fff;
+	border-radius: 0px;
+	margin: auto;
+	padding: 0;
+	margin-bottom: 0.3em;
+}
+
+a {
+	color: #000;
+}
+
+a:hover {
+	color: #666;
+}
+
+img {
+	box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.2), 0 6px 100px 0 rgba(0, 0, 0, 0.19);
+	border-radius: 0em 0em 0.6em 0.6em;
+	width: 3.5em;
+	height: 3.5em;
+	padding: 0.2em;
+}
+/*
+div.col-sm-3, div.col-sm-6 {
+	height: 100%;
+}*/
