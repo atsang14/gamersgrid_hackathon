@@ -70,3 +70,20 @@ img{
 .container {
 	width: 100%!important;
 }
+
+.border-bottom {
+	padding-bottom: 2em;
+	border-bottom: 1px solid #666;
+}
+
+nav {
+	font-size: 20px;
+	margin: auto;
+	text-align: center;
+	width: 100%;
+}
+
+nav a {
+	margin: 0 10em;
+}
+
