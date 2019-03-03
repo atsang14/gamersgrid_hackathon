@@ -42,32 +42,36 @@
       font-size: 20px;
     }
 
+    .w-75 {
+      width: 95%!important;
+      margin: auto;
+    }
+
   </style>
 </head>
 <body>
   <!--sign in -->
-  <header class="m-auto text-center">
+  <header class="m-auto text-center center">
     <img src="assets/images/logo-remade.png">
   </header>
   <div class="container text-center m-auto">
-    <form class="login-text">
+    <form class="login-text text-left w-50" action="/dashboard.html">
       First name:<br>
-      <input type="text" name="firstname" placeholder="Mickey">
+      <input class="w-75" type="text" name="firstname" placeholder="Mickey">
       <br>
       Last name:<br>
-      <input type="text" name="lastname" placeholder="Mouse">
+      <input class="w-75" type="text" name="lastname" placeholder="Mouse">
       <br><br>
-      <input type="submit" value="Submit">
+      <input class="btn w-75 " type="submit" value="Submit">
 
-      <div class="g-signin2 m-auto" data-onsuccess="onSignIn" data-theme="dark"></div>
-      <a href="#" onclick="signOut();">Sign out</a>
+      <div class="g-signin2 m-auto" data-onsuccess="onSignIn" data-theme="dark" onclick="location.href='dashboard.html';">
+      </div>
     </form>
   </div>
 
   <script>
     function onSignIn(googleUser) {
       // Useful data for your client-side scripts:
-
       var profile = googleUser.getBasicProfile();
       console.log("ID: " + profile.getId()); // Don't send this directly to your server!
       console.log('Full Name: ' + profile.getName());
@@ -81,15 +85,5 @@
       console.log("ID Token: " + id_token);
     }
   </script>
-
-  <!--signout -->
-<script>
-  function signOut() {
-    var auth2 = gapi.auth2.getAuthInstance();
-    auth2.signOut().then(function () {
-      console.log('User signed out.');
-    });
-  }
-</script>
 </body>
 </html>
