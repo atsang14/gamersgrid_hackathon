@@ -29,6 +29,10 @@ app.get('/login', (req, res) => {
 	res.sendFile(path.join(__dirname, "public/login.html"));
 });
 
+app.get('/dashboard', (req, res) => {
+	res.sendFile(path.join(__dirname, "public/dashboard.html"));
+});
+
 // Start the server
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
