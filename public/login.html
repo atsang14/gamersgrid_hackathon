@@ -6,7 +6,21 @@
 </head>
 <body>
   <!--sign in -->
+<div>
+  <form>
+    First name:<br>
+    <input type="text" name="firstname" value="Mickey">
+    <br>
+    Last name:<br>
+    <input type="text" name="lastname" value="Mouse">
+    <br><br>
+    <input type="submit" value="Submit">
+  </form>
   <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
+</div>
+
+
+  
   <script>
     function onSignIn(googleUser) {
       // Useful data for your client-side scripts:

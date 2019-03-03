@@ -77,10 +77,11 @@
             shape: shape,
             map: map,
             title: 'Hi Julio',
-            icons: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'
           });
-          attachSecretMessage(marker, "You are Here! :]");        
+          attachSecretMessage(marker, "You are Here! :]");
           marker.setMap(map);
+      
+          var messages = ["League of Legends", "Super Smash Bros"]
 
           for(var i = 0; i < markers.length; i++) {
             var marker = new google.maps.Marker({
@@ -90,6 +91,7 @@
               title: 'Hi Julio',
               icon: "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png"  
             });
+            attachSecretMessage(marker, messages[i]);
             marker.setMap(map);
           }
 
@@ -119,6 +121,16 @@
       map = new google.maps.Map(document.getElementById('map'), {
         center: pos,
         zoom: 15
+      });
+    }
+
+    function attachSecretMessage(marker, secretMessage) {
+      var infowindow = new google.maps.InfoWindow({
+        content: secretMessage
+      });
+
+      marker.addListener('click', function() {
+        infowindow.open(marker.get('map'), marker);
       });
     }
 
