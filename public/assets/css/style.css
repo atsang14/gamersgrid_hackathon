@@ -84,6 +84,44 @@ nav {
 }
 
 nav a {
-	margin: 0 10em;
+	margin: 0 9em;
 }
 
+.data {
+	border-right: 1px solid #666;
+}
+
+.players {
+	height: 200px;
+}
+
+.col-sm-4 {
+	margin:auto;
+	text-align: center;
+}
+
+.col-sm-6 {
+	margin: auto;
+	text-align: center;
+}
+
+.carousel {
+	width: 100%;
+}
+
+.feeds {
+	border: 1px solid #fff;
+}
+
+h3 {
+	border-bottom: 2px solid #677bda ;
+}
+
+.summary {
+	text-align: left;
+}
+
+.read {
+	font-weight: bolder;
+	color: #000;
+}

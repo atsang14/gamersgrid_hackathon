@@ -15,7 +15,8 @@
         float: right;
         margin-left: 1100px;
         height: 50%;
-        width: 25%;
+        width: 24%;
+        top: -98%;
         }
         /* Optional: Makes the sample page fill the window. */
         html, body {
@@ -33,46 +34,107 @@
     </h1>
     <nav class="nav pb-2">
         <a class="nav-link active text-center" href="#">Home</a>
-        <a class="nav-link text-center" href="#">Profile</a>
+        <a class="nav-link text-center" href="user-profile.html">Profile</a>
         <a class="nav-link text-center" href="HostCreation.html">Host</a>
-        <a class="nav-link text-center" href="#">Settings</a>
+        <a class="nav-link text-center" href="event.html">Events</a>
     </nav>
 </header>
-<div id="data"></div>
 <div class="container">
-  <h2>Carousel Example</h2>  
-  <div id="myCarousel" class="carousel slide" data-ride="carousel">
-    <!-- Indicators -->
-    <ol class="carousel-indicators">
-      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-      <li data-target="#myCarousel" data-slide-to="1"></li>
-      <li data-target="#myCarousel" data-slide-to="2"></li>
-    </ol>
+  <div class="row">
+    <div class="col-sm-3">
+      <div id="data"></div>
+    </div>
+    <div class="col-sm-6">
+      <div class="row">
+        <h2 class="text-center">Pro-Gamers</h2>  
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+          <!-- Indicators -->
+          <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+          </ol>
 
-    <!-- Wrapper for slides -->
-    <div class="carousel-inner">
-      <div class="item active">
-        <img src="la.jpg" alt="Los Angeles" style="width:100%;">
-      </div>
+          <!-- Wrapper for slides -->
+          <a href="pro-profile">
+            <div class="carousel-inner">
+              <div class="item row">
+                <div class="col-sm-4 mx-1">
+                  <img class="players" src="assets/images/bjergeson.jpg" alt="Los Angeles" style="height:200px;">
+                </div>
+                <div class="col-sm-4 mx-1">
+                  <img class="players" src="assets/images/Faker.png" alt="Los Angeles" style="height:200px;">
+                </div>
+                <div class="col-sm-4 mx-1">
+                  <img class="players" src="assets/images/Sasha.jpg" alt="Los Angeles" style="height:200px;">
+                </div>
+              </div>
 
-      <div class="item">
-        <img src="chicago.jpg" alt="Chicago" style="width:100%;">
+              <div class="item active row">
+                <div class="col-sm-4 mx-1">
+                  <img class="players" src="assets/images/markiplier.jpg" alt="Los Angeles" style="height:200px;">
+                </div>
+                <div class="col-sm-4 mx-1">
+                  <img class="players" src="assets/images/pewdiepie.jpg" alt="Los Angeles" style="height:200px;">
+                </div>
+                <div class="col-sm-4 mx-1">
+                  <img class="players" src="assets/images/Zhang-Mu-Pan.jpg" alt="Los Angeles" style="height:200px;">
+                </div>          
+              </div>
+            
+              <div class="item row">
+                <div class="col-sm-6 mx-1">
+                  <img class="players" src="assets/images/Saahil.jpg" alt="Los Angeles" style="height:200px;">
+                </div>
+                <div class="col-sm-6 mx-1">
+                  <img class="players" src="https://media.licdn.com/dms/image/C5103AQHx_rvtz11Sig/profile-displayphoto-shrink_800_800/0?e=1557360000&v=beta&t=prApd0vpCcFSQ87CiqvIKVRhoej0IssJ7eSD7maGrs0" alt="Los Angeles" style="height:200px;">
+                </div>          
+              </div>
+            </div>
+          </a>
+          <!-- Left and right controls -->
+          <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="right carousel-control" href="#myCarousel" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
       </div>
-    
-      <div class="item">
-        <img src="ny.jpg" alt="New york" style="width:100%;">
+      <div class="row">
+        <h2 class="text-center">Community</h2>
+        <div class="feeds">
+          <h3>
+          You can try Sea of Thieves' new mode early, but only if you're quiet about it</h3>
+          <p class="summary">The Sea of Thieves testing program will become opt-in next week, but you'll have to agree to an NDA to take part.
+            Next week's Sea of Thieves update, which is coming on March 6, is a "quality of life, bug fixes, and balancing" update—so, a minor one. It does do one major thing, though, with a change to Sea of Thieves' alpha testing program. After the update, we'll all be able take part in tests of the Arena mode and other future updates, just so long as we don't talk about any of it publicly....<a class="read" href="#">Read More</a></p>
+        </div>
+        <div class="feeds">
+          <h3>
+          Olofmeister: Astralis the best Counter-Strike team 'in the history of the game'</h3>
+           <p class="summary">KATOWICE, Poland -- FaZe Clan's Olof "olofmeister" Kajbjer Gustafsson still remembers the half-empty halls where Counter-Strike: Global Offensive major qualifying rounds used to take place.
+            <br>
+            "In the semifinal, we had like 500 people in the crowd," olofmeister said. "The final was in the Spodek arena, but that was the only game that was there. It's way, way different. There are so many more teams playing. Now, they're...<a class="read" href="#">Read More</a></p>
+        </div>
+        <div class="feeds">
+          <h3>
+          Overwatch League: 99 words with Atlanta's dafran</h3>
+         <p class="summary">Walking into Skybox 2 at the Blizzard Arena, half-eaten sandwich in hand, Atlanta Reign DPS player, Daniel "dafran" Francesca, seemed confused, and with good reason.
+            <br>
+            Skybox 2 sounds like it would be a swanky space, a place for executives to mingle while watching their teams duke it out on the Overwatch League stage. Blizzard Arena's Skybox 1 is exactly this; Skybox 2 is a cushy space, but its entire viewing...<a class="read" href="#">Read More</a></p>
+        </div>
+        <div class="feeds">
+          <h3>
+          Chengdu Hunters outperform early expectations in Overwatch League</h3>
+          <p class="summary">BURBANK, Calif. -- To a paltry crowd left in Blizzard Arena after a full day of Overwatch League matches on Feb. 15, Chengdu Hunters support player Li "Yveltal" Xianyao stood up and shouted. It was an explosion of energy and emotion after a long day and possibly a longer offseason for Yveltal and some of his teammates. He raised his arms above his head, stoking the crowd's directed cheers.
+            <br>
+            The Hunters weren't supposed to...<a class="read" href="#">Read More</a></p>
+        </div>
+      </div>
       </div>
     </div>
-
-    <!-- Left and right controls -->
-    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-      <span class="glyphicon glyphicon-chevron-left"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="right carousel-control" href="#myCarousel" data-slide="next">
-      <span class="glyphicon glyphicon-chevron-right"></span>
-      <span class="sr-only">Next</span>
-    </a>
   </div>
 </div>
 <div id="map"></div>
@@ -120,11 +182,15 @@
 
 			for(var key in checkout) {
 				console.log(checkout[key]);
-				var name = $('<p>').append(checkout[key].name);
-				var description = $('<p>').append(checkout[key].description);
-				var Fee = $('<p>').append(checkout[key].Fee);
-				var Type = $('<p>').append(checkout[key].Type);
-				$('#data').append(name).append(description).append(Fee).append(Type);
+				var name = $('<h3 style="font-weight:bold;">').append(checkout[key].name);
+				var description = $('<h4>').append(checkout[key].description);
+				var Fee = $('<h4>').append(checkout[key].Fee);
+				var Type = $('<h4>').append(checkout[key].Type);
+        var newA = $('<a href="event.html">');
+        var newDiv = $('<div style="border-bottom:1px dashed #000">');
+        newA.append(name).append(description).append(Fee).append(Type);
+        newDiv.append(newA);
+				$('#data').append(newDiv);
 			}
 			
 		});
