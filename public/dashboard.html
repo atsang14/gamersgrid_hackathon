@@ -159,10 +159,18 @@
     });
 		
 		database.ref("/hostInfo").on('value', function(snapshot) {
-		
+			
 			var checkout = snapshot.val();
 			console.log(checkout);
 
+			for(var key in checkout) {
+				console.log(checkout[key]);
+				var name = $('<p>').append(checkout[key].name);
+				var description = $('<p>').append(checkout[key].description);
+				console.log(data);
+				$('#data').append(name).append(description);
+			}
+			
 		});
 
 

@@ -59,9 +59,6 @@
     // Create a variable to reference the database.
     var database = firebase.database();
 
-    // -------------------------------------------------------------- (CRITICAL - BLOCK) --------------------------- //
-    // connectionsRef references a specific location in our database.
-    // All of our connections will be stored in this directory.
     var connectionsRef = database.ref("/connections");
 
     var connectedRef = database.ref(".info/connected");
